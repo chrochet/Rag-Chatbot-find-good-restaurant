@@ -38,7 +38,7 @@ LLM이 근거 기반으로 맛집 여부를 판단해주는 **맛집 판별 AI �
 
 ---
 
-## 📂 프로젝트 구조
+## 📁 프로젝트 구조
 ```bash
 .
 ├── app_streamlit4.py          # Streamlit UI 실행 파일
@@ -52,8 +52,8 @@ LLM이 근거 기반으로 맛집 여부를 판단해주는 **맛집 판별 AI �
 ├── .gitignore
 ├── .env.example
 └── (vectordb4 / vectordb5)    # 로컬에서 생성되는 ChromaDB (Git 제외)
-
-
+```
+---
 
 ## 📌 주요 기능
 
