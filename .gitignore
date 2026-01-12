@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtualenv
+venv*/
+.venv/
+
+# Env secrets
+.env
+
+# Streamlit
+.streamlit/
+
+# Chroma / Vector DB
+vectordb*/
+chroma.sqlite3
+*.parquet
+
+# OS
+.DS_Store
+Thumbs.db
+
+# backups
+보류/
