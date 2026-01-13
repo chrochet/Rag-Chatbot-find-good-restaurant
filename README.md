@@ -1,5 +1,4 @@
-# Rag-Chatbot---hole-in-the-wall
-# 🍽️ Streamlit-RAG-Restaurant-Chatbot
+# 🍽️ Rag-Chatbot---hole-in-the-wall
 **Streamlit 기반 RAG 맛집 판별 AI Chatbot**
 
 ---
@@ -12,13 +11,13 @@ LLM이 근거 기반으로 맛집 여부를 판단해주는 **맛집 판별 AI �
 ---
 
 ## 🕰️ 개발 기간
-- 2025. __.__ ~ 2025. __.__  
-  *(원하는 날짜로 수정하세요)*
+- 2025.10.16 ~ 2025.11.7
 
 ---
 
 ## 🧑‍🤝‍🧑 멤버 구성
 - 개인 프로젝트 (1인 개발)
+- 아이디어보조 
 
 ---
 
