@@ -53,32 +53,33 @@ LLM이 근거 기반으로 맛집 여부를 판단해주는 **맛집 판별 AI �
 └── (vectordb4 / vectordb5)    # 로컬에서 생성되는 ChromaDB (Git 제외)
 ```
 ---
-
 ## 📌 주요 기능
 
-### 1. Streamlit 맛집 판별 UI (app_streamlit4.py)
-[상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki)
-- 사용자 입력(가게명) 기반으로 판별을 실행하고 결과를 화면에 출력
+### 01 Streamlit UI (app_streamlit4.py)
+[상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki/01-Streamlit-UI)
+- 사용자 입력(가게명/지점명) 기반으로 판별을 실행하고 결과를 Streamlit 화면에 출력
 
-### 2. RAG 판별 로직 구성 (main_v4.py)
-[상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki)
-- Retriever(ChromaDB)로 관련 문서를 검색하고, LLM이 근거 기반으로 맛집/비맛집 판단 생성
+### 02 RAG 판별 로직 (main_v4.py)
+[상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki/02-RAG-%ED%8C%90%EB%B3%84-%EB%A1%9C%EC%A7%81)
+- ChromaDB에서 관련 리뷰 문서를 검색하고, 점수 기반 판별 + LLM 근거 요약을 생성
 
-### 3. Naver API 데이터 수집 (big_data_collector.py)
-[상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki)
-- 네이버 API로 리뷰/블로그 데이터를 수집하여 RAG 학습용 원천 데이터 구축
+### 03 Naver API 데이터 수집 (big_data_collector.py)
+[상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki/03-Naver-API-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%EC%A7%91)
+- 네이버 OpenAPI로 블로그 리뷰 데이터를 수집하여 RAG 학습용 원천 데이터 구축
 
-### 4. 데이터 전처리 파이프라인 (preprocess_data.py)
-[상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki)
-- 중복 제거, 텍스트 정제 등을 수행하여 검색 품질을 높일 수 있도록 문서를 표준화
+### 04 전처리 파이프라인 (preprocess_data.py)
+[상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki/04-%EC%A0%84%EC%B2%98%EB%A6%AC-%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8)
+- 리뷰 텍스트 정제/가게명 추출/점수화 및 라벨링으로 검색 품질 향상
 
-### 5. Embedding + Vector DB 구축 (embed_to_chroma.py)
-[상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki)
-- 전처리 데이터를 임베딩하여 ChromaDB에 저장하고, 유사도 기반 검색 환경 구성
+### 05 Embedding & ChromaDB (embed_to_chroma.py)
+[상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki/05-Embedding-&-ChromaDB)
+- 전처리 데이터를 임베딩하여 ChromaDB(VectorDB)에 저장하고 유사도 기반 검색 환경 구성
+
+### 06 설정 및 판별 기준 (config.py)
+[상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki/06-%EC%84%A4%EC%A0%95-%EB%B0%8F-%ED%8C%90%EB%B3%84-%EA%B8%B0%EC%A4%80)
+- 모델, DB 경로, 판별 기준(Threshold), 가중치/불용어 등 핵심 설정을 config로 통합 관리
 
 ### 6. 설정 및 판별 기준 관리 (config.py)
 [상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki)
 - API 키, DB 경로, 프롬프트 및 맛집 판별 기준을 설정 파일로 관리
 
-- [상세보기](https://github.com/USERNAME/REPO/wiki/Config-&-Criteria) · [WIKI](https://github.com/USERNAME/REPO/wiki)
-- API 키, DB 경로, 프롬프트 및 맛집 판별 기준을 설정 파일로 관리
