@@ -1,4 +1,4 @@
-# 🍽️ Rag-Chatbot---hole-in-the-wall
+# 🍽️ Rag-Chatbot-find-good-restaurant
 **Streamlit 기반 RAG 맛집 판별 AI Chatbot**
 
 ---
