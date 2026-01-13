@@ -56,36 +56,29 @@ LLM이 근거 기반으로 맛집 여부를 판단해주는 **맛집 판별 AI �
 
 ## 📌 주요 기능
 
-### 1. Streamlit 맛집 판별 UI (`app_streamlit4.py`)
-- [상세보기](https://github.com/USERNAME/REPO/wiki/Streamlit-App) · [WIKI](https://github.com/USERNAME/REPO/wiki)
+### 1. Streamlit 맛집 판별 UI (app_streamlit4.py)
+[상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki)
 - 사용자 입력(가게명) 기반으로 판별을 실행하고 결과를 화면에 출력
 
----
-
-### 2. RAG 판별 로직 구성 (`main_v4.py`)
-- [상세보기](https://github.com/USERNAME/REPO/wiki/RAG-Main-Logic) · [WIKI](https://github.com/USERNAME/REPO/wiki)
+### 2. RAG 판별 로직 구성 (main_v4.py)
+[상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki)
 - Retriever(ChromaDB)로 관련 문서를 검색하고, LLM이 근거 기반으로 맛집/비맛집 판단 생성
 
----
-
-### 3. Naver API 데이터 수집 (`big_data_collector.py`)
-- [상세보기](https://github.com/USERNAME/REPO/wiki/Naver-API-Collector) · [WIKI](https://github.com/USERNAME/REPO/wiki)
+### 3. Naver API 데이터 수집 (big_data_collector.py)
+[상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki)
 - 네이버 API로 리뷰/블로그 데이터를 수집하여 RAG 학습용 원천 데이터 구축
 
----
-
-### 4. 데이터 전처리 파이프라인 (`preprocess_data.py`)
-- [상세보기](https://github.com/USERNAME/REPO/wiki/Preprocess-Pipeline) · [WIKI](https://github.com/USERNAME/REPO/wiki)
+### 4. 데이터 전처리 파이프라인 (preprocess_data.py)
+[상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki)
 - 중복 제거, 텍스트 정제 등을 수행하여 검색 품질을 높일 수 있도록 문서를 표준화
 
----
-
-### 5. Embedding + Vector DB 구축 (`embed_to_chroma.py`)
-- [상세보기](https://github.com/USERNAME/REPO/wiki/Embedding-ChromaDB) · [WIKI](https://github.com/USERNAME/REPO/wiki)
+### 5. Embedding + Vector DB 구축 (embed_to_chroma.py)
+[상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki)
 - 전처리 데이터를 임베딩하여 ChromaDB에 저장하고, 유사도 기반 검색 환경 구성
 
----
+### 6. 설정 및 판별 기준 관리 (config.py)
+[상세보기 · WIKI](https://github.com/USERNAME/REPO/wiki)
+- API 키, DB 경로, 프롬프트 및 맛집 판별 기준을 설정 파일로 관리
 
-### 6. 설정 및 판별 기준 관리 (`config.py`)
 - [상세보기](https://github.com/USERNAME/REPO/wiki/Config-&-Criteria) · [WIKI](https://github.com/USERNAME/REPO/wiki)
 - API 키, DB 경로, 프롬프트 및 맛집 판별 기준을 설정 파일로 관리
