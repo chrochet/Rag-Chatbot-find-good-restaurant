@@ -56,61 +56,36 @@ LLM이 근거 기반으로 맛집 여부를 판단해주는 **맛집 판별 AI �
 
 ## 📌 주요 기능
 
-### ✅ 1. 맛집 판별 RAG Chatbot
-- [상세보기](https://github.com/USERNAME/REPO/wiki/01.-RAG-%EB%A7%9B%EC%A7%91-%ED%8C%90%EB%B3%84-Chatbot) · [WIKI 이동](https://github.com/USERNAME/REPO/wiki)
-- 사용자가 입력한 가게명/키워드를 기반으로 맛집 여부를 판단하는 RAG 챗봇
-- Retriever(ChromaDB)로 관련 문서/후기를 검색한 뒤, LLM이 근거 기반으로 답변 생성
-- 결과는 "맛집 / 비맛집 / 정보부족" 등으로 구조화된 형태로 출력 가능
+### 1. Streamlit 맛집 판별 UI (`app_streamlit4.py`)
+- [상세보기](https://github.com/USERNAME/REPO/wiki/Streamlit-App) · [WIKI](https://github.com/USERNAME/REPO/wiki)
+- 사용자 입력(가게명) 기반으로 판별을 실행하고 결과를 화면에 출력
 
 ---
 
-### ✅ 2. 데이터 수집 (Naver API)
-- [상세보기](https://github.com/USERNAME/REPO/wiki/02.-Naver-API-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%EC%A7%91) · [WIKI 이동](https://github.com/USERNAME/REPO/wiki)
-- Naver API를 통해 가게/후기/블로그/리뷰 등 맛집 관련 텍스트 데이터를 수집
-- 수집 데이터는 RAG 지식베이스 구축을 위한 원천 데이터로 활용
+### 2. RAG 판별 로직 구성 (`main_v4.py`)
+- [상세보기](https://github.com/USERNAME/REPO/wiki/RAG-Main-Logic) · [WIKI](https://github.com/USERNAME/REPO/wiki)
+- Retriever(ChromaDB)로 관련 문서를 검색하고, LLM이 근거 기반으로 맛집/비맛집 판단 생성
 
 ---
 
-### ✅ 3. 전처리 파이프라인
-- [상세보기](https://github.com/USERNAME/REPO/wiki/03.-%EC%A0%84%EC%B2%98%EB%A6%AC-%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8) · [WIKI 이동](https://github.com/USERNAME/REPO/wiki)
-- 수집된 원천 데이터 정제(결측/중복 제거, 텍스트 클리닝)
-- RAG에 적합하도록 문서 형태로 정규화
-- 임베딩/벡터화 전에 품질을 일정하게 맞추는 역할
+### 3. Naver API 데이터 수집 (`big_data_collector.py`)
+- [상세보기](https://github.com/USERNAME/REPO/wiki/Naver-API-Collector) · [WIKI](https://github.com/USERNAME/REPO/wiki)
+- 네이버 API로 리뷰/블로그 데이터를 수집하여 RAG 학습용 원천 데이터 구축
 
 ---
 
-### ✅ 4. 임베딩 & ChromaDB(Vector DB) 구축
-- [상세보기](https://github.com/USERNAME/REPO/wiki/04.-Embedding-&-ChromaDB-%EA%B5%AC%EC%B6%95) · [WIKI 이동](https://github.com/USERNAME/REPO/wiki)
-- 전처리된 텍스트를 임베딩하여 Vector로 변환
-- ChromaDB에 저장하여 유사도 기반 검색 가능
-- `vectordb4`, `vectordb5` 등 로컬 DB 폴더로 관리 (GitHub 업로드 제외)
+### 4. 데이터 전처리 파이프라인 (`preprocess_data.py`)
+- [상세보기](https://github.com/USERNAME/REPO/wiki/Preprocess-Pipeline) · [WIKI](https://github.com/USERNAME/REPO/wiki)
+- 중복 제거, 텍스트 정제 등을 수행하여 검색 품질을 높일 수 있도록 문서를 표준화
 
 ---
 
-### ✅ 5. Streamlit UI 기반 판별 시스템
-- [상세보기](https://github.com/USERNAME/REPO/wiki/05.-Streamlit-UI-%EA%B5%AC%EC%84%B1) · [WIKI 이동](https://github.com/USERNAME/REPO/wiki)
-- Streamlit으로 입력/버튼/결과 영역이 있는 간단한 웹 UI 제공
-- 사용자가 가게명을 입력 → "판별 시작" 클릭 → 결과 출력 흐름
+### 5. Embedding + Vector DB 구축 (`embed_to_chroma.py`)
+- [상세보기](https://github.com/USERNAME/REPO/wiki/Embedding-ChromaDB) · [WIKI](https://github.com/USERNAME/REPO/wiki)
+- 전처리 데이터를 임베딩하여 ChromaDB에 저장하고, 유사도 기반 검색 환경 구성
 
 ---
 
-### ✅ 6. 이전 검색 결과 잔상 문제 해결 (Session State)
-- [상세보기](https://github.com/USERNAME/REPO/wiki/06.-Session-State-%EC%9E%94%EC%83%81-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0) · [WIKI 이동](https://github.com/USERNAME/REPO/wiki)
-- Streamlit 특성상 입력 변경 시 이전 결과가 남는 문제 해결
-- `st.session_state.last_query`, `st.session_state.last_result` 사용
-- 입력값이 바뀌면 이전 결과를 자동 삭제하여 UI 혼동 방지
-
----
-
-### ✅ 7. DOM removeChild 에러 방지 (출력 영역 안전화)
-- [상세보기](https://github.com/USERNAME/REPO/wiki/07.-DOM-removeChild-%EC%97%90%EB%9F%AC-%EB%B0%A9%EC%A7%80) · [WIKI 이동](https://github.com/USERNAME/REPO/wiki)
-- 결과 출력 영역을 `st.empty()`로 분리하여 DOM 충돌 방지
-- `result_box = st.empty()` 형태로 안정적인 결과 렌더링 구현
-
----
-
-### ✅ 8. vectordb 자동 탐색 기능
-- [상세보기](https://github.com/USERNAME/REPO/wiki/08.-vectordb-%EC%9E%90%EB%8F%99-%ED%83%90%EC%83%89) · [WIKI 이동](https://github.com/USERNAME/REPO/wiki)
-- 환경 변수 `VDB_DIR`가 있으면 해당 경로 사용
-- 없으면 `vectordb4` → 없으면 `vectordb5` 순으로 자동 탐색
-- 둘 다 없으면 `embed_to_chroma.py` 실행 안내 출력
+### 6. 설정 및 판별 기준 관리 (`config.py`)
+- [상세보기](https://github.com/USERNAME/REPO/wiki/Config-&-Criteria) · [WIKI](https://github.com/USERNAME/REPO/wiki)
+- API 키, DB 경로, 프롬프트 및 맛집 판별 기준을 설정 파일로 관리
