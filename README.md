@@ -56,7 +56,7 @@ LLM이 근거 기반으로 맛집 여부를 판단해주는 **맛집 판별 AI �
 ## 📌 주요 기능
 
 ### 01 Streamlit UI (app_streamlit4.py)
-[상세보기 · WIKI]([https://github.com/USERNAME/REPO/wiki/01-Streamlit-UI](https://github.com/chrochet/Rag-Chatbot---hole-in-the-wall/wiki/01-Streamlit-UI))
+[상세보기 · WIKI](https://github.com/chrochet/Rag-Chatbot-find-good-restaurant/wiki/01-Streamlit-UI)
 - 사용자 입력(가게명/지점명) 기반으로 판별을 실행하고 결과를 Streamlit 화면에 출력
 
 ### 02 RAG 판별 로직 (main_v4.py)
